@@ -7,34 +7,23 @@ int main() {
     ios::sync_with_stdio(false);
     cin.tie(NULL); cout.tie(NULL);
 
-    int n; //¸í·ÉÀÇ ¼ö
-
-    // Á¶°Ç 1 ¡Â N ¡Â 500,000
-    while (true) {
-        cin >> n;
-        if (n >= 1 && n <= 500000) {
-            break;
-        }
-        else {
-            cout << "Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù. ÀçÀÔ·Â¹Ù¶ø´Ï´Ù.\n";
-        }
-    }
+    int n; //ëª…ë ¹ì˜ ìˆ˜
 
     queue<int> q;
 
-    // 1ºÎÅÍ n±îÁö ¼ýÀÚ Å¥ »ðÀÔ
+    // 1ë¶€í„° nê¹Œì§€ ìˆ«ìž í ì‚½ìž…
     for (int i = 1; i <= n; i++) {
         q.push(i);
     }
 
     while (q.size() != 1) {
-        q.pop(); // Ã¹¹øÂ° ¼ö Á¦°Å
-        int result = q.front(); // µÎ¹øÂ° ¼ö
-        q.pop(); //µÎ¹øÂ° ¼ö Á¦°Å
-        q.push(result); //µÎ¹øÂ° ¼ö ¸Ç µÚ¿¡ Ãß°¡
+        q.pop(); // ì²«ë²ˆì§¸ ìˆ˜ ì œê±°
+        int result = q.front(); // ë‘ë²ˆì§¸ ìˆ˜
+        q.pop(); //ë‘ë²ˆì§¸ ìˆ˜ ì œê±°
+        q.push(result); //ë‘ë²ˆì§¸ ìˆ˜ ë§¨ ë’¤ì— ì¶”ê°€
     }
 
-    //¸¶Áö¸· Ä«µå Ãâ·Â
+    //ë§ˆì§€ë§‰ ì¹´ë“œ ì¶œë ¥
     cout << q.front() << "\n";
     return 0;
 }
